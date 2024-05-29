@@ -1,2 +1,3 @@
-# expenseTracker
-React App for Tracking my Expenses
+# E-Tracker
+
+- Stay Tuned...
