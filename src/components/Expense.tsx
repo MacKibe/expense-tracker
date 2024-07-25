@@ -1,4 +1,4 @@
-import { Expense_list } from "./Expense_list";
+import { ExpenseCard } from "./ExpenseCard";
 import { Capture_expense } from "./Capture_expense";
 import "../App.css";
 import { useState } from "react";
@@ -31,11 +31,13 @@ export const Expense = () => {
     <div className="expense_panel">
       {hideAddItemButton && (
         <button className="button add_item" onClick={handleClick}>
-          {showCaptureExpenseComponent ? "Add Item" : "Add Item"}
+          Add Item
         </button>
       )}
       {showCaptureExpenseComponent && (<Capture_expense onClose={handleCaptureExpenseClose} />)}
-      <Expense_list />
+
+      <h3>Expenses</h3>
+      <ExpenseCard />
     </div>
   );
 };
