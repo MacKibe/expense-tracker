@@ -9,7 +9,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: .5% 2%;
+  padding: 0.5% 2%;
   background-color: aliceblue;
 }
 .app_body {
@@ -24,13 +24,12 @@
 /* ---------------------------------------------------------------------- */
 
 .expense_panel {
-  border: 2px solid black;
   min-height: 90dvh;
   max-height: 90dvh;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   padding-top: 0.5%;
 }
 .expense_panel .button {
@@ -38,10 +37,10 @@
   background-color: aquamarine;
 }
 .add_button {
-  width: 50%;
+  width: 90%;
+  background-color: black;
 }
 form {
-  border: 1px solid black;
   background-color: bisque;
   width: 95%;
 }
@@ -74,27 +73,38 @@ form textarea {
 /* ---------------------------------------------------------------------- */
 
 .expense_card {
+  border: 1px solid black;
   width: 90%;
   overflow-y: scroll;
 }
 .expense_card_item {
-  background-color: azure;
-  margin-bottom: 10%;
+  margin: 5%;
   padding: 5% 15%;
 }
+.mandatory_category {
+  background-color: rgba(220, 226, 43, 0.53);
+}
+.non_essential_category {
+  background-color: rgba(95, 111, 160, 0.505);
+}
+.debt_category {
+  background-color: rgba(118, 50, 1, 0.505);
+}
+.savings_category {
+  background-color: rgba(197, 3, 3, 0.513);
+}
 .expense_card .item_name {
-  color: brown;
-  font-weight: 700;
-  font-size: .7em;
-  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 0.8em;
+  text-align: left;
 }
 .expense_card .item_amount {
-  padding: 5%;
   font-size: 1.5em;
+  font-weight: 500;
   text-align: left;
 }
 .expense_card .item_date {
-  font-size: .7em;
+  font-size: 0.7em;
   text-align: right;
 }
 
