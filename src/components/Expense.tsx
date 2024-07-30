@@ -5,8 +5,8 @@ import { useState } from "react";
 
 export const Expense = () => {
   //
-  // Dummy data.
-  const data = [
+  // State of our data.
+  const [expenses, setExpenses] = [
     {
       itemName: "BusFare",
       itemAmount: 900,
@@ -92,6 +92,12 @@ export const Expense = () => {
       itemDescription: "Contribution",
     },
   ];
+
+  // 
+  // Add new expense
+  const addNewExpense = (expenseData) => {
+    setExpenses([...expenses, expenseData])
+  }
   //
   // Handle showing the component.
   const [showCaptureExpenseComponent, setShowCaptureExpenseComponent] =
@@ -117,19 +123,23 @@ export const Expense = () => {
 
   return (
     <div className="expense_panel">
+      
+      {/* Hides the Add button when clicked and shows the capture component to collsct data */}
       {hideAddItemButton && (
         <button className="button add_item" onClick={handleClick}>
           Add Item
         </button>
       )}
+
+      {/* Hides the capture component after the user has entered the data */}
       {showCaptureExpenseComponent && (
-        <Capture_expense onClose={handleCaptureExpenseClose} />
+        <Capture_expense onClose={handleCaptureExpenseClose} addNewExpense={addNewExpense}/>
       )}
 
       <div className="expense_card">
       {/* Display from the newest addition */}
-        {data.slice().reverse().map((item, index) => (
-          <ExpenseCard key={index} item={item} />
+        {expenses.slice().reverse().map((item, index) => (
+          <ExpenseCard key={index} item={item}/>
         ))}
         ;
       </div>

@@ -121,3 +121,14 @@ form textarea {
   flex: 3;
   font-size: 5em;
 }
+
+/* ---------------------------------------------------------------------- */
+/* Media Query for Mobile Screen Devices */
+/* ---------------------------------------------------------------------- */ 
+
+@media (max-width: 480px) {
+  .app_body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
