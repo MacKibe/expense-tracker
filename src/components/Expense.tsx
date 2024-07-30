@@ -6,7 +6,7 @@ import { useState } from "react";
 export const Expense = () => {
   //
   // State of our data.
-  const [expenses, setExpenses] = [
+  const data = [
     {
       itemName: "BusFare",
       itemAmount: 900,
@@ -92,57 +92,35 @@ export const Expense = () => {
       itemDescription: "Contribution",
     },
   ];
+// State of expenses
+const [expenses, setExpenses] = useState(data);
+const [showCapture, setShowCapture] = useState(false);
 
-  // 
-  // Add new expense
-  const addNewExpense = (expenseData) => {
-    setExpenses([...expenses, expenseData])
-  }
-  //
-  // Handle showing the component.
-  const [showCaptureExpenseComponent, setShowCaptureExpenseComponent] =
-    useState(false);
+// Update the expenses
+const addNewExpense = (expenseData) => {
+  setExpenses([...expenses, expenseData]);
+};
 
-  //
-  // Hides button when clicked
-  const [hideAddItemButton, setHideAddItemButton] = useState(true);
+return (
+  <div className="expense_panel">
+    <button
+      className="button add_item"
+      onClick={() => setShowCapture(!showCapture)}
+    >
+      {showCapture ? "Close" : "Add Item"}
+    </button>
 
-  //
-  // Display the capture expense component and hides the add new item button.
-  const handleClick = () => {
-    setShowCaptureExpenseComponent(!showCaptureExpenseComponent);
-    setHideAddItemButton(!hideAddItemButton);
-  };
+    {showCapture && <Capture_expense addNewExpense={addNewExpense} />}
 
-  //
-  // Closes the capture expense component and shows the button
-  const handleCaptureExpenseClose = () => {
-    setHideAddItemButton(true);
-    setShowCaptureExpenseComponent(false);
-  };
-
-  return (
-    <div className="expense_panel">
-      
-      {/* Hides the Add button when clicked and shows the capture component to collsct data */}
-      {hideAddItemButton && (
-        <button className="button add_item" onClick={handleClick}>
-          Add Item
-        </button>
-      )}
-
-      {/* Hides the capture component after the user has entered the data */}
-      {showCaptureExpenseComponent && (
-        <Capture_expense onClose={handleCaptureExpenseClose} addNewExpense={addNewExpense}/>
-      )}
-
-      <div className="expense_card">
+    <div className="expense_card">
       {/* Display from the newest addition */}
-        {expenses.slice().reverse().map((item, index) => (
-          <ExpenseCard key={index} item={item}/>
+      {expenses
+        .slice()
+        .reverse()
+        .map((item, index) => (
+          <ExpenseCard key={index} item={item} />
         ))}
-        ;
-      </div>
     </div>
-  );
+  </div>
+);
 };
