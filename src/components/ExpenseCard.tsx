@@ -21,7 +21,7 @@ export const ExpenseCard = ({ item }) => {
     <div className={`expense_card_item ${customClassName}`}>
       {/* List my items */}
       <p className="item_name">{item.itemName}</p>
-      <p className="item_amount">Kshs {item.itemAmount}</p>
+      <p className="item_amount">Kshs {item.itemAmount.toLocaleString()}</p>
       <p className="item_date">{item.itemDate}</p>
     </div>
   );

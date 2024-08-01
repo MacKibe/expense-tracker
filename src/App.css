@@ -42,20 +42,20 @@
 }
 form {
   background-color: bisque;
-  width: 95%;
 }
 form h2 {
   text-align: center;
   text-decoration: underline;
+  font-size: 1em;
   padding-top: 2%;
 }
 form label {
+  font-size: .7em;
   display: block;
   margin: 4% 5%;
 }
 form input {
-  font-size: 1.5em;
-  width: 80%;
+  font-size: .7em;
   margin: 0 10%;
   background-color: aqua;
 }
@@ -64,8 +64,8 @@ form textarea {
   margin: 0 10%;
 }
 .save_button {
-  width: 80%;
-  margin: 2% 10%;
+  width: 90%;
+  margin: 2% 5%;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -74,37 +74,40 @@ form textarea {
 
 .expense_card {
   border: 1px solid black;
-  width: 90%;
   overflow-y: scroll;
 }
 .expense_card_item {
+  background-color: rgb(216, 216, 216);
   margin: 5%;
   padding: 5% 15%;
 }
 .mandatory_category {
-  background-color: rgba(220, 226, 43, 0.53);
+  border-right: 20px solid #dce22b87;
 }
 .non_essential_category {
-  background-color: rgba(95, 111, 160, 0.505);
+  border-right: 20px solid #5f6fa081;
 }
 .debt_category {
-  background-color: rgba(118, 50, 1, 0.505);
+  border-right: 20px solid #76320181;
 }
 .savings_category {
-  background-color: rgba(197, 3, 3, 0.513);
+  border-right: 20px solid #c5030383;
 }
 .expense_card .item_name {
   color: rgb(0, 0, 0);
-  font-size: 0.8em;
+  font-size: .6em;
+  text-decoration: underline;
   text-align: left;
 }
 .expense_card .item_amount {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
   text-align: left;
 }
 .expense_card .item_date {
-  font-size: 0.7em;
+  font-size: 0.5em;
+  font-family: 'Courier New', Courier, monospace;
   text-align: right;
 }
 
@@ -113,13 +116,15 @@ form textarea {
 /* ---------------------------------------------------------------------- */
 
 .reports_panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: brown;
   color: white;
   flex: 3;
-  font-size: 5em;
+  font-size:1.5em;
+}
+.time p {
+  font-size: .5em;
+  text-align: right;
+  margin: 2% 5%;
 }
 
 /* ---------------------------------------------------------------------- */
